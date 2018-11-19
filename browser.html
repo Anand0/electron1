@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="browser.css">
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
+    <script src="browser.js"></script>
+    <script>window.$ = window.jQuery = require('./jquery-3.0.0.min.js');</script>
+
+  <body>
+
+        <div id="a" class="split split-horizontal">
+        <div id="c" class="split content">
+    <!-- <div id="lft-control">
+       <div><button id="new" title="New" >New</button></div>
+       <div><button id="Grid" title="Grid" >Grid</button></div>
+       <div><button id="Find" title="Find" >Find</button></div>
+       <div><button id="Transfer" title="Transfer" >Transfer</button></div>
+       <div><button id="More" title="More" >More</button></div>
+    </div> -->
+
+   <!-- <div id="lft-control-1">
+     <div><button id="previous" title="<" ><</button></div>
+     <div><button id="val" title="val" >3</button></div>
+     <div><button id="forward" title=">" >></button></div>
+  </div>
+
+  <div id="lft-control-2">
+    <div><button id="Favourites" title="Favourites" >Favourites</button></div>
+
+ </div> -->
+
+ <div class="styled-input">
+   <!-- <label for="Full-Name"><span>FullName</span><br /> -->
+
+   <input type="text" id="FullName"  name="FullName" value="" required />
+<label style="color: #10749c;">Name</label>
+<span></span>
+   <!-- </label> -->
+
+</div>
+<!--<div id="lft-control-main1"> -->
+<div class="styled-input" >
+  <!-- <label for="Company-Names"><span>Company Names</span><br /> -->
+
+  <input type="text" id="company" name="CampName" value="" required />
+<label style="color: #10749c;">Company</label>
+<span></span>
+  <!-- </label> -->
+
+</div>
+
+<div class="styled-input">
+  <!-- <label for="Website"><span>Website</span><br /> -->
+  <input type="text" id="website" name="Website" value="" required />
+  <!-- </label> --><label style="color: #10749c;">Website</label>
+<span></span>
+</div>
+
+<div class="styled-input">
+
+  <!-- <label for="business-Mail"><span>Business Mail</span><br /> -->
+  <input type="text" id="comDomain" name="Business Mail" value="" required />
+ <label style="color: #10749c;">Business Mail</label>
+<span></span>
+
+</div>
+
+<div class="styled-input">
+  <!-- <label for="personal-Mail"><span>Personal Email</span><br /> -->
+  <input type="text" id="person-mail" name="Personal Email" value="" required />
+<label style="color: #10749c;">Personal Mail</label>
+<span></span>
+  <!-- </label> -->
+ <!-- <div><button id="persoanl-find" title="slideView" >Find</button></div> -->
+</div>
+
+ <div><button id="business-find" title="slideView" >Find Email</button></div>
+
+<div id="lft-control-main5">
+
+  <textarea readonly id="response" rows="25" cols="0">
+
+</textarea>
+
+</div>
+
+<!--<div id="container"></div>-->
+
+<!-- <div id="myProgress">
+  <div id="myBar"></div>
+
+</div> -->
+
+        </div>
+        <!-- <div id="d" class="split content"></div> -->
+      </div>
+      <div id="b" class="split split-horizontal">
+        <div id="e" class="split content">
+
+          <div id="controls">
+              <div><button id="slideView" title="slideView" ><img src="res/signout.ico"></button></div>
+              <div><button id="grid" title="grid"><img src="res/emppro_browser_grid_icon.ico"></button></div>
+              <div><button id="back" title="Go Back" ><img src="res/back.ico"></button></div>
+                <div><button id="forward" title="Go Forward"><img src="res/forward.ico"></button></div>
+              <!-- <div><button id="forward" title="Go Forward" disabled="true"><img src="res/forward.ico"></button></div> -->
+              <div class="center-column">
+              <form id="location-form">
+              <input id="location" type="text" value="https://www.linkedin.com/">
+              </form>
+              </div>
+              <div><button id="reload" title="Reload"><img src="res/refresh.ico" vspace="5"></button></div>
+              <div><button id="stop" title="stop"><img src="res/stop.ico"></button></div>
+              <div><button id="fav" title="fav"><img src="res/fav.ico"></button></div>
+              <div><button id="link" title="link"><img src="res/fav_linkedin_emp.ico"></button></div>
+	      <div><button id="grab" title="grab" style="color: #ffffff">Grab</button></div>
+
+              <!-- <div><button id="advgrpsearch" title="advgrpsearch"><img src="res/advgrpsearch.ico"><span class="btn_txt">Add Group</span></button></div> -->
+
+              <!-- <div><button id= "download" title="Download"><img src="res/transparent.gif" width="1px" height="16px"><span class="btn_txt">Capture</span></button></div> -->
+              <div><button id="visitProfile" title="visitProfile"><img src="res/EEF.ico" width="16px" height="16px"><span class="btn_txt">Visit Profiles</span></button></div>
+              <!-- <div><button id="Nothing-Scheduled" title="Nothing-Scheduled"><img src="res/pvschedule.ico"><span class="btn_txt">Nothing Scheduled</span></button></div> -->
+              <div><button id="View" title="flag"><img src="res/flag_wht.ico"><span class="btn_txt">Flag Victories / Visits</span></button></div>
+              <!-- <div id="progress_Status"><span class="btn_txt">Visit Progress</span></div> -->
+
+              <!-- <div id="myProgress"> -->
+             <div><div id="myBar" style = "text-align: center; margin:0 0 0 5px; padding:0; display:inline-block; color:#ffffff; height:17px; width: 100%;">Visit Status</div></div>
+              <!-- </div> -->
+
+              </div>
+
+              <!-- The Modal -->
+            <div id="myModal-alert" class="modal-alert">
+              <div class="modal-wrapper-alert" id="box-alert">
+          <!--Header Starts-->
+          <div class="modal-header-alert">
+          <div class="header-lft-alert">
+          <img src="res/EEF.ico" width="16px" height="16px" alt="" />eGrabber Profile-Viewer
+          </div>
+
+          <div class="header-rgt-alert close1">
+          X
+          </div>
+          </div>
+          <!--Header Ends-->
+          <!--Body Starts-->
+          <div class="modal-body-alert">
+            <div style="width:500px; margin:0 auto;">
+         <table width="330px" border="0" cellspacing="0" cellpadding="2" id="profile-visits" style="border:1px solid #ccc;">
+         <tr>
+         <th width="250px" align="left" style="border:1px solid #ccc;">SI No.</th>
+         <td width="250px" align="left" style="border:1px solid #ccc;" id="profile-sno">1</td>
+         </tr>
+         <tr>
+         <th align="left" style="border:1px solid #ccc;">No of profiles visited</th>
+         <td style="border:1px solid #ccc;" id="profile-name">Anand</td>
+         </tr>
+         <tr>
+         <th align="left" style="border:1px solid #ccc;">Time taken to visit</th>
+         <td style="border:1px solid #ccc;" id="profile-time">3 mins</td>
+        </tr>
+        </table>
+       </div>
+
+          </div>
+        </div>
+      </div>
+
+              <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <div class="modal-wrapper" id="box">
+          <!--Header Starts-->
+          <div class="modal-header">
+          <div class="header-lft">
+          <img src="res/EEF.ico" width="16px" height="16px" alt="" />eGrabber Profile-Viewer
+          </div>
+
+          <div class="header-rgt close">
+          X
+          </div>
+          </div>
+          <!--Header Ends-->
+          <!--Body Starts-->
+          <div class="modal-body">
+          <!-- Rows Starts-->
+          <div class="rows row1">
+          <label for="range"><span>Number of profiles to be visited [ max : <label id="visited-profiles">353</label> right now ]</span>
+          <span><input type="text" id="range" name="range" maxlength="3" value="" />scheduled for next 24 hours = 0</label><span>
+          </div>
+          <div class="rows row2">
+          <label for="CampName"><span>Campaign Name</span>
+          <span><input type="text" id="CampName" name="CampName" value="" /></span>
+          </label>
+          </div>
+          <div class="rows row1">
+          <label for="pageNo"><span>Start from page number</span>
+          <span><input type="text" id="pageNo" name="pageNo" value="" /></span>
+          </label>
+          </div>
+          <div class="rows row3">
+          <fieldset>
+          <legend>Visit Filters - Want to skip any profiles?</legend>
+          <div>
+          <span>
+          <label for="visit" class="checkbox-inline">
+                <input type="checkbox" id="visit" name="visit" value="visit" checked="checked">Visit
+              </label>
+          </span>
+          <span class="right-aligned">
+          <label for="Radio0" class="radio-inline">
+                <!-- <input type="radio" id="Radio0" name="rad" checked="checked" data-waschecked="true" value="All">All -->
+                <input type="radio" id="Radio0" name="rad"  value="All" onClick="modify_boxes()" checked="checked">All
+              </label>
+              <label for="Radio1" class="radio-inline">
+                <input type="radio" id="Radio1" name="rad" value="premimum only" value="premimum only" onClick="modify_boxes()">Premium Only
+              </label>
+              <label for="Radio2" class="radio-inline">
+                <input type="radio" id="Radio2" name="rad" value="Non premimum only" value="Non premimum only" onClick="modify_boxes()">Non Premium Only
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-5">
+          <span>
+          <label for="Skip degree" class="checkbox-inline">
+                <input type="checkbox" id="Skip degree" name="Skip degree" value="Skip degree" onclick="skip_btn()">Skip degrees
+              </label>
+          <label for="1st" class="checkbox-inline">
+                <input type="checkbox" id="1st" name="1st" value="1st" onClick="skip_boxes()" >1st
+              </label>
+          <label for="2nd" class="checkbox-inline">
+                <input type="checkbox" id="2nd" name="2nd" value="2nd" onClick="skip_boxes()" >2nd
+              </label>
+          <label for="Group" class="checkbox-inline">
+                <input type="checkbox" id="Group" name="Group" value="Group" onClick="skip_boxes()" >Group
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-30">
+          <span>
+          <label for="skip1" class="checkbox-inline">
+                <input type="checkbox" id="skip1" name="skip1" value="skip1">skip if visited atleast
+              </label>
+              <label for="skippedTimes" style="margin-left:25px;">
+                <input type="number" id="skippedTimes" name="skippedTimes" min="1" max="10" value="3">times
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-10">
+          <span>
+          <label for="skip2" class="checkbox-inline">
+                <input type="checkbox" id="skip2" name="skip2" value="skip2">skip profiles visited in last
+              </label>
+              <label for="skippedDays">
+                <input type="number" id="skippedDays" name="skippedDays" min="1" max="30" value="30">days
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-10">
+          <span>
+          <label for="skip3" class="checkbox-inline">
+                <input type="checkbox" id="skip3" name="skip3" value="skip1" checked="checked">skip profiles in "Do not visit" people list
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-10">
+          <span>
+          <label for="skip4" class="checkbox-inline">
+                <input type="checkbox" id="skip4" name="skip4" value="skip1" checked="checked">skip companies in "Do not visit company" list
+              </label>
+          </span>
+          </div>
+           </fieldset>
+          </div>
+          <div class="rows row3">
+          <fieldset>
+          <legend>When to run campaign?</legend>
+          <div>
+          <span>
+          <label for="start" class="checkbox-inline">
+                <input type="checkbox" id="start" name="start" value="start">Start time
+              </label>
+          </span>
+          <span class="right-aligned">
+              <label>
+                <input type="date" id="thedate" name="date" value="" />
+                <input type="time" id="theTime" name="time" value="" />
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-20">
+          <span>
+          <label for="chunk" class="checkbox-inline">
+                <input type="checkbox" id="chunk" name="chunk" value="chunk">Chunk and visit
+              </label>
+              <label for="chunkNo" style="margin-left:5px;">
+                <input type="text" id="chunkNo" name="chunkNo" value="" />(50-1000) profiles per day
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-30">
+          <span>
+          <label for="re-run" class="checkbox-inline">
+                <input type="checkbox" id="re-run" name="re-run" value="re-run" />Re-run every
+              </label>
+              <label for="re-run-days" style="margin-left:15px;">
+               <select name="re-run-days" id="re-run-days">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="25">25</option>
+           <option value="30">30</option>
+          </select>Days
+              </label>
+          </span>
+          </div>
+          <div class="margin-top-5">
+          <span>
+          <label for="stop-after" class="checkbox-inline">
+                <input type="checkbox" id="stop-after" name="stop-after" value="stop-after">Stop after
+              </label>
+              <label for="stop-after-occurences" style="margin-left:33px;">
+               <select name="stop-after-occurences" id="stop-after-occurences">
+            <option value="1">1</option>
+            <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          </select>occurences
+              </label>
+          </span>
+          </div>
+           </fieldset>
+          </div>
+          <div class="rows" align="right">
+          <button type="button" id="Option" name="Option">Options</button>
+          <button type="button" id="run" name="run">Run Now</button>
+          </div>
+          <!-- Rows Ends-->
+          </div>
+          <!--Body Starts-->
+          </div>
+              <!--Modal Wrapper Ends-->
+          </div>
+
+                <!-- <div> <webview id="web" src="https://www.linkedin.com/" autosize="on"></webview></div> -->
+                <div>
+                  <!-- // https://www.linkedin.com/search/results/people/?keywords=ios&origin=SWITCH_SEARCH_VERTICAL -->
+                    <!-- //    <webview id="web" src="https://www.linkedin.com/" preload="./inject.js" useragent="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" httpreferrer="https://www.linkedin.com/" style="height: 100%; width: 100%;" ></webview> -->
+                        <webview id="web" src="https://www.linkedin.com/search/results/people/?keywords=ios&origin=SWITCH_SEARCH_VERTICAL" preload="./inject.js" useragent="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" httpreferrer="https://www.linkedin.com/" style="height: 100%; width: 100%;" ></webview>
+                    </div>
+
+              <div class="Gridmodal" id="myGrid">
+  <div class="Gridmodal-wrapper" id="gridArticle">
+
+  </div>
+</div>
+
+
+
+  <!-- The Modal Ends -->
+
+
+
+
+
+      <!-- <webview id="web" src="https://www.linkedin.com/"  preload="./inject.js" useragent="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" httpreferrer="https://www.linkedin.com/" guestinstance="3" style="width:640px; height:480px; z-index:0;"></webview> -->
+
+
+
+
+
+        </div>
+
+      </div>
+      <script type="text/javascript">
+    	$(document).ready(function() {
+      // var rightWid = $("#b").width();
+      // alert(rightWid);
+      // var leftWid = $("#a").width();
+      // alert(leftWid);
+      // var webviewWid = rightWid - leftWid;
+      // alert(webviewWid);
+      // $("#web").width(webviewWid);
+        //   $(window).on("click", function(e) {
+    		//   alert("Screen X:" +e.screenX + "Scrren Y:" +e.screenY);
+    	  // });
+        });
+    	</script>
+
+      <script type="text/javascript">
+
+      var modal = document.getElementById('myModal');
+
+      var span = document.getElementsByClassName("close")[0];
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        // alert(1);
+          document.getElementById('myModal').style.display = "none";
+          // document.getElementById('myModal-alert').style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == document.getElementById('myModal') || event.target == document.getElementById('myGrid')) {
+              document.getElementById('myModal').style.display = "none";
+              // document.getElementById('myModal-alert').style.display = "none";
+              // document.getElementById('myGrid').style.display = "none";
+          }
+      }
+      </script>
+
+
+
+      <script type="text/javascript">
+function modify_boxes() {
+document.getElementById('visit').checked = true;
+}
+</script>
+
+<script type="text/javascript">
+function skip_btn(){
+   var skipVal = document.getElementById('Skip degree').checked
+  //  alert("if part"+skipVal)
+  if (document.getElementById('Skip degree').checked) {
+document.getElementById('2nd').checked = true;
+document.getElementById('Group').checked = true;
+document.getElementById('1st').checked = true;
+}else{
+  // alert("else part"+skipVal)
+  document.getElementById('2nd').checked = false;
+  document.getElementById('Group').checked = false;
+  document.getElementById('1st').checked = false;
+}
+}
+</script>
+
+<script type="text/javascript">
+function skip_boxes() {
+document.getElementById('Skip degree').checked = true;
+// document.getElementById('2nd').checked = true;
+// document.getElementById('Group').checked = true;
+}
+</script>
+
+<!-- <script>window.$ = window.jQuery = require('jquery');</script> -->
+
+<script type="text/javascript">
+$(function(){
+  $('#theTime').each(function(){
+    var d = new Date(),
+        h = d.getHours(),
+        m = d.getMinutes();
+
+    if(h < 10) h = '0' + h;
+    if(m < 10) m = '0' + m;
+    $(this).attr({
+      'value': h + ':' + m
+    });
+  });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	// Numeric only control handler
+jQuery.fn.ForceNumericOnly =
+function()
+{
+    return this.each(function()
+    {
+        $(this).keydown(function(e)
+        {
+            var key = e.charCode || e.keyCode || 0;
+            // allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
+            // home, end, period, and numpad decimal
+            return (
+                key == 8 ||
+                key == 9 ||
+                key == 13 ||
+                key == 46 ||
+                key == 110 ||
+                key == 190 ||
+                (key >= 35 && key <= 40) ||
+                (key >= 48 && key <= 57) ||
+                (key >= 96 && key <= 105));
+        });
+    });
+};
+$("#range").ForceNumericOnly();
+//Keyup scripts
+    $("#range").on("keyup", function(e) {
+		var rangeVal = $(this).val();
+		$("#visited-profiles").text(rangeVal);
+	});
+
+  //Drag
+  var box = $('#box');
+
+  /*box.offset({
+      left: 100,
+      top: 75
+  });*/
+
+  var drag = {
+      elem: null,
+      x: 0,
+      y: 0,
+      state: false
+  };
+  var delta = {
+      x: 0,
+      y: 0
+  };
+
+  box.mousedown(function(e) {
+      if (!drag.state) {
+          drag.elem = this;
+          this.style.cursor = 'default'
+          drag.x = e.pageX;
+          drag.y = e.pageY;
+          drag.state = true;
+      }
+     //return false;
+  });
+
+  $(document).mousemove(function(e) {
+  	 if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'BUTTON' || document.activeElement.tagName == 'SELECT') {
+  		 drag.state = false;
+    }
+      if (drag.state) {
+          drag.elem.style.cursor = 'crosshair';
+
+          delta.x = e.pageX - drag.x;
+          delta.y = e.pageY - drag.y;
+
+          //$('#log').text(e.pageX + ' ' + e.pageY + ' ' + delta.x + ' ' + delta.y);
+
+          var cur_offset = $(drag.elem).offset();
+
+          $(drag.elem).offset({
+              left: (cur_offset.left + delta.x),
+              top: (cur_offset.top + delta.y)
+          });
+
+          drag.x = e.pageX;
+          drag.y = e.pageY;
+      }
+  });
+
+  $(document).mouseup(function() {
+      if (drag.state) {
+          drag.elem.style.cursor = 'default';
+          drag.state = false;
+      }
+  });
+
+});
+</script>
+
+<script type="text/javascript">
+
+ // document.getElementById('date').value = (new Date()).format("m/dd/yy");
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+  var today = year + "-" + month + "-" + day;
+ // var today = month + "-" + day + "-" + year;
+
+document.getElementById('thedate').value = today;
+</script>
+
+  </body>
+</html>
